@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME | IPL 2026 Ticket Booking</title>
+  </head>
+  <body>
+    <header>
+      <h1>IPL 2026 Ticket Booking</h1>
+
+      <nav>
+        <ul>
+          <li><a href="#match-schedule">Matches</a></li>
+          <li><a href="#ticket-bookings">Book Ticket</a></li>
+          <li><a href="#ticket-bookings">My Bookings</a></li>
+          <li><a href="#guidelines">Guidelines</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero">
+        <img src="." alt="IPL 2026" width="100%" />
+        <p>Experience The Stadium Energy Live!</p>
+        <button>View Schedule</button>
+        <button>Book Ticket</button>
+      </section>
+
+      <section id="about-ipl">
+        <h2>About IPL 2026</h2>
+        <ul>
+          <h3>Popular Teams</h3>
+          <li>Royal Challengers Bengaluru</li>
+          <li>Chennai Super Kings</li>
+          <li>Kolkata Knight Riders</li>
+          <li>Delhi Capitals</li>
+          <li>Mumbai Indians</li>
+        </ul>
+        <ol>
+          <h3>Popular Venues</h3>
+          <li>Bengaluru</li>
+          <li>Chennai</li>
+          <li>Kolkata</li>
+          <li>Delhi</li>
+          <li>Mumbai</li>
+        </ol>
+      </section>
+
+      <section id="match-schedule">
+        <h2>Match Schedule</h2>
+        <table border="2">
+          <tr>
+            <th>Match No</th>
+            <th>Teams</th>
+            <th>Date & Time</th>
+            <th>Venue</th>
+            <th>General Stand</th>
+            <th>Premium Stand</th>
+            <th>VIP Stand</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td>1.</td>
+            <td>RCB vs CSK</td>
+            <td>2027-03-01 19:00 IST</td>
+            <td>Bengaluru</td>
+            <td>1500</td>
+            <td>4500</td>
+            <td>7000</td>
+            <td><button><a href="#ticket-bookings">Book Ticket</a></button></td>
+          </tr>
+          <tr>
+            <td>2.</td>
+            <td>KKR vs DC</td>
+            <td>2027-03-02 19:00 IST</td>
+            <td>Kolkata</td>
+            <td>1200</td>
+            <td>3000</td>
+            <td>5700</td>
+            <td><button><a href="#ticket-bookings">Book Ticket</a></button></td>
+          </tr>
+          <tr>
+            <td>3.</td>
+            <td>MI vs RCB</td>
+            <td>2027-03-03 19:00 IST</td>
+            <td>Mumbai</td>
+            <td>700</td>
+            <td>5000</td>
+            <td>9235</td>
+            <td><button><a href="#ticket-bookings">Book Ticket</a></button></td>
+          </tr>
+          <tr>
+            <td>4.</td>
+            <td>CSK vs KKR</td>
+            <td>2027-03-04 19:00 IST</td>
+            <td>Chennai</td>
+            <td>1700</td>
+            <td>2500</td>
+            <td>5487</td>
+            <td><button><a href="#ticket-bookings">Book Ticket</a></button></td>
+          </tr>
+          <tr>
+            <td>5.</td>
+            <td>DC vs MI</td>
+            <td>2027-03-05 19:00 IST</td>
+            <td>Delhi</td>
+            <td>450</td>
+            <td>1000</td>
+            <td>3000</td>
+            <td><button><a href="#ticket-bookings">Book Ticket</a></button></td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="match-form">
+        <h2>Booking Form</h2>
+        <label for="team-filter">Filter Team: </label>
+        <select id="team-filter">
+            <option value="">--Select Team--</option>
+            <option value="rcb">RCB</option>
+            <option value="csk">CSK</option>
+            <option value="kkr">KKR</option>
+            <option value="mi">MI</option>
+        </select>
+        <div>
+            <h3>Details:</h3>
+          <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+            <br />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+            <br />
+            <label for="phone-number">Phone Number:</label>
+            <input type="tel" id="phone-number" name="phone-number" />
+            <br />
+            <label for="select-match">Select Match:</label>
+            <select id="match" name="select-match" required>
+              <option value="">--Select Match--</option>
+              <option value="rcb-csk">RCB vs CSK</option>
+              <option value="kkr-dc">KKR vs DC</option>
+              <option value="mi-rcb">MI vs RCB</option>
+              <option value="csk-kkr">CSK vs KKR</option>
+              <option value="dc-mi">DC vs MI</option>
+            </select>
+            <br />
+            <label for="stand-category">Stand Category:</label>
+            <select id="stand-category" name="stand-category" required>
+              <option value="">--Select Category--</option>
+              <option value="general">General</option>
+              <option value="premium">Premium</option>
+              <option value="vip">VIP</option>
+            </select>
+            <br />
+            <label for="ticket-quantity">Ticket Quantity:</label>
+            <input
+              type="number"
+              id="ticket-quantity"
+              name="ticket-quantity"
+              required
+            />
+            <br />
+            <button type="submit">Book Ticket</button>
+          </form>
+        </div>
+        <div>
+          <h3>Booking Summary:</h3>
+          <p>Match:</p>
+          <p>Venue:</p>
+          <p>Date & Time:</p>
+          <p>Stand Category:</p>
+          <p>Ticket Price:</p>
+          <p>Quantity:</p>
+          <p>Total Amount: </p>
+        </div>
+      </section>
+
+      <section id="ticket-bookings">
+        <h2>My Ticket Bookings</h2>
+        <table border="2">
+          <tr>
+            <th>Booking ID</th>
+            <th>Customer</th>
+            <th>Match</th>
+            <th>Stand</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th>Date Booked</th>
+            <th>Status</th>
+          </tr>
+        </table>
+      </section>
+
+      <section id="guidelines">
+        <div id="ticket-verification">
+            <h3>Ticket Verification</h3>
+            <p>Please scan your ticket QR code to verify</p>
+        </div>
+        <div id="id-proof-requirement">
+            <h3>ID Proof Requirement</h3>
+            <p>Provide a valid government ID</p>
+        </div>
+        <div id="prohibited-items">
+            <h3>Prohibited Items</h3>
+            <p>Bags, Snacks, Knifes</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>2026 IPL Ticket Booking</p>
+      </footer>
+    </main>
+  </body>
+</html>
