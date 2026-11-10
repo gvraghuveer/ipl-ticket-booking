@@ -134,51 +134,81 @@
             <option value="csk">CSK</option>
             <option value="kkr">KKR</option>
             <option value="mi">MI</option>
+            <option value="dc">DC</option>
           </select>
 
           <h3>Details:</h3>
-          <form>
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" required />
-              <br />
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required />
-              <br />
-              <label for="phone-number">Phone Number:</label>
-              <input type="tel" id="phone-number" name="phone-number" />
-              <br />
-              <label for="select-match">Select Match:</label>
-              <select id="match" name="select-match" required>
-                <option value="">--Select Match--</option>
-                <option value="rcb-csk">RCB vs CSK</option>
-                <option value="kkr-dc">KKR vs DC</option>
-                <option value="mi-rcb">MI vs RCB</option>
-                <option value="csk-kkr">CSK vs KKR</option>
-                <option value="dc-mi">DC vs MI</option>
-              </select>
-              <br />
-              <label for="stand-category">Stand Category:</label>
-              <select id="stand-category" name="stand-category" required>
-                <option value="">--Select Category--</option>
-                <option value="general">General</option>
-                <option value="premium">Premium</option>
-                <option value="vip">VIP</option>
-              </select>
-              <br />
-              <label for="ticket-quantity">Ticket Quantity:</label>
-              <input
-                type="number"
-                id="ticket-quantity"
-                name="ticket-quantity"
-                required
-              />
-              <br />
-              <button type="submit">Book Ticket</button>
-            </form>
+          <form action="#" method="POST">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              minlength="3"
+              maxlength="50"
+              placeholder="Enter full name"
+              required
+            />
+            <br />
+
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@gmail.com"
+              required
+            />
+            <br />
+
+            <label for="phone-number">Phone Number:</label>
+            <input
+              type="tel"
+              id="phone-number"
+              name="phone-number"
+              required
+              pattern="[0-9]{10}"
+              maxlength="10"
+              placeholder="10-digit mobile number"
+            />
+            <br />
+
+            <label for="match">Select Match:</label>
+            <select id="match" name="select-match" required>
+              <option value="">--Select Match--</option>
+              <option value="rcb-csk">RCB vs CSK</option>
+              <option value="kkr-dc">KKR vs DC</option>
+              <option value="mi-rcb">MI vs RCB</option>
+              <option value="csk-kkr">CSK vs KKR</option>
+              <option value="dc-mi">DC vs MI</option>
+            </select>
+            <br />
+
+            <label for="stand-category">Stand Category:</label>
+            <select id="stand-category" name="stand-category" required>
+              <option value="">--Select Category--</option>
+              <option value="general">General</option>
+              <option value="premium">Premium</option>
+              <option value="vip">VIP</option>
+            </select>
+            <br />
+
+            <label for="ticket-quantity">Ticket Quantity:</label>
+            <input
+              type="number"
+              id="ticket-quantity"
+              name="ticket-quantity"
+              min="1"
+              max="6"
+              placeholder="Max 6 tickets"
+              required
+            />
+            <br />
+            <button type="submit">Book Ticket</button>
+            <button type="reset" style="margin-top: 8px;">Reset</button>
           </form>
         </div>
 
-        <!-- Right Side: Booking Summary -->
         <div class="summary-container">
           <h3>Booking Summary:</h3>
           <p>Match:</p>
@@ -189,6 +219,7 @@
           <p>Quantity:</p>
           <p>Total Amount:</p>
         </div>
+        
       </section>
 
       <section id="ticket-bookings">
@@ -208,17 +239,23 @@
       </section>
 
       <section id="guidelines">
-        <div class="card">
-          <h3>Ticket Verification</h3>
-          <p>Please scan your ticket QR code to verify</p>
-        </div>
-        <div class="card">
-          <h3>ID Proof Requirement</h3>
-          <p>Provide a valid government ID</p>
-        </div>
-        <div class="card">
-          <h3>Prohibited Items</h3>
-          <p>Bags, Snacks, Knifes</p>
+        <h2>Guidelines</h2>
+
+        <div class="cards-container">
+          <div class="card">
+            <h3>Ticket Verification</h3>
+            <p>Please scan your ticket QR code to verify</p>
+          </div>
+
+          <div class="card">
+            <h3>ID Proof Requirement</h3>
+            <p>Provide a valid government ID</p>
+          </div>
+
+          <div class="card">
+            <h3>Prohibited Items</h3>
+            <p>Bags, Snacks, Knives</p>
+          </div>
         </div>
       </section>
 
