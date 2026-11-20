@@ -63,6 +63,7 @@ section {
   margin-bottom: 25px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  scroll-margin-top: 90px;
 }
 
 section h2 {
@@ -348,7 +349,6 @@ table button a:hover {
   font-size: 0.95rem;
 }
 
-/* 9. Footer */
 footer {
   background: linear-gradient(135deg, #130325 0%, #2a0845 50%, #64157a 100%);
   color: #ffffff;
@@ -357,4 +357,22 @@ footer {
   border-radius: 8px;
   box-shadow: 0 -4px 15px rgba(100, 21, 122, 0.25);
   font-weight: 500;
+}
+
+.toast {
+  display: none;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #2a0845;
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  z-index: 2000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.toast.show {
+  display: block;
 }
