@@ -71,7 +71,9 @@
             <td>4500</td>
             <td>7000</td>
             <td>
-              <button><a class="match-book-btn" href="#match-form">Book Ticket</a></button>
+              <button>
+                <a class="match-book-btn" href="#match-form">Book Ticket</a>
+              </button>
             </td>
           </tr>
           <tr>
@@ -83,7 +85,9 @@
             <td>3000</td>
             <td>5700</td>
             <td>
-              <button><a class="match-book-btn" href="#match-form">Book Ticket</a></button>
+              <button>
+                <a class="match-book-btn" href="#match-form">Book Ticket</a>
+              </button>
             </td>
           </tr>
           <tr>
@@ -95,7 +99,9 @@
             <td>5000</td>
             <td>9235</td>
             <td>
-              <button><a class="match-book-btn" href="#match-form">Book Ticket</a></button>
+              <button>
+                <a class="match-book-btn" href="#match-form">Book Ticket</a>
+              </button>
             </td>
           </tr>
           <tr>
@@ -107,7 +113,9 @@
             <td>2500</td>
             <td>5487</td>
             <td>
-              <button><a class="match-book-btn" href="#match-form">Book Ticket</a></button>
+              <button>
+                <a class="match-book-btn" href="#match-form">Book Ticket</a>
+              </button>
             </td>
           </tr>
           <tr>
@@ -119,7 +127,9 @@
             <td>1000</td>
             <td>3000</td>
             <td>
-              <button><a class="match-book-btn" href="#match-form">Book Ticket</a></button>
+              <button>
+                <a class="match-book-btn" href="#match-form">Book Ticket</a>
+              </button>
             </td>
           </tr>
         </table>
@@ -139,7 +149,7 @@
           </select>
 
           <h3>Details:</h3>
-          <form action="#" method="POST">
+          <form id="booking-form" action="#" method="POST">
             <label for="name">Name:</label>
             <input
               type="text"
@@ -206,21 +216,20 @@
             />
             <br />
             <button type="submit">Book Ticket</button>
-            <button type="reset" style="margin-top: 8px;">Reset</button>
+            <button type="reset" style="margin-top: 8px">Reset</button>
           </form>
         </div>
 
         <div class="summary-container">
           <h3>Booking Summary:</h3>
-          <p>Match:</p>
-          <p>Venue:</p>
-          <p>Date & Time:</p>
-          <p>Stand Category:</p>
-          <p>Ticket Price:</p>
-          <p>Quantity:</p>
-          <p>Total Amount:</p>
+          <p>Match: <span id="summary-match"></span></p>
+          <p>Venue: <span id="summary-venue"></span></p>
+          <p>Date & Time: <span id="summary-date"></span></p>
+          <p>Stand Category: <span id="summary-stand"></span></p>
+          <p>Ticket Price: <span id="summary-price"></span></p>
+          <p>Quantity: <span id="summary-quantity"></span></p>
+          <p>Total Amount: <span id="summary-total"></span></p>
         </div>
-        
       </section>
 
       <section id="ticket-bookings">
@@ -266,6 +275,5 @@
     </main>
 
     <script src="./js/app.js"></script>
-
   </body>
 </html>
