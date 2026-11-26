@@ -1,7 +1,9 @@
-const Footer = () => {
+function Footer() {
   return (
-    <div>Footer</div>
-  )
+    <footer>
+      <p>2026 IPL Ticket Booking</p>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
