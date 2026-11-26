@@ -1,4 +1,14 @@
 function MatchCard(props) {
+  function handleClick(e) {
+    e.preventDefault();
+
+    document
+      .getElementById("match-form")
+      .scrollIntoView({ behavior: "smooth" });
+
+    props.onBook();
+  }
+
   return (
     <div className="match-card">
       <h3>
@@ -9,7 +19,8 @@ function MatchCard(props) {
       <p>General: ₹{props.general}</p>
       <p>Premium: ₹{props.premium}</p>
       <p>VIP: ₹{props.vip}</p>
-      <a className="match-book-btn" href="#match-form">
+      <p>Seats left: {props.seats}</p>
+      <a className="match-book-btn" href="#match-form" onClick={handleClick}>
         Book Ticket
       </a>
     </div>
