@@ -11,7 +11,9 @@
     <header>
       <h1>IPL 2026 Ticket Booking</h1>
 
-      <nav class="navbar">
+      <button id="menu-btn" class="menu-btn">☰</button>
+
+      <nav class="navbar" id="navbar">
         <ul>
           <li><a href="#match-schedule">Matches</a></li>
           <li><a href="#match-form">Book Ticket</a></li>
@@ -51,88 +53,72 @@
 
       <section id="match-schedule">
         <h2>Match Schedule</h2>
-        <table border="2">
-          <tr>
-            <th>Match No</th>
-            <th>Teams</th>
-            <th>Date & Time</th>
-            <th>Venue</th>
-            <th>General Stand</th>
-            <th>Premium Stand</th>
-            <th>VIP Stand</th>
-            <th>Action</th>
-          </tr>
-          <tr>
-            <td>1.</td>
-            <td>RCB vs CSK</td>
-            <td>2027-03-01 19:00 IST</td>
-            <td>Bengaluru</td>
-            <td>1500</td>
-            <td>4500</td>
-            <td>7000</td>
-            <td>
-              <button>
-                <a class="match-book-btn" href="#match-form">Book Ticket</a>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>2.</td>
-            <td>KKR vs DC</td>
-            <td>2027-03-02 19:00 IST</td>
-            <td>Kolkata</td>
-            <td>1200</td>
-            <td>3000</td>
-            <td>5700</td>
-            <td>
-              <button>
-                <a class="match-book-btn" href="#match-form">Book Ticket</a>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>3.</td>
-            <td>MI vs RCB</td>
-            <td>2027-03-03 19:00 IST</td>
-            <td>Mumbai</td>
-            <td>700</td>
-            <td>5000</td>
-            <td>9235</td>
-            <td>
-              <button>
-                <a class="match-book-btn" href="#match-form">Book Ticket</a>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>4.</td>
-            <td>CSK vs KKR</td>
-            <td>2027-03-04 19:00 IST</td>
-            <td>Chennai</td>
-            <td>1700</td>
-            <td>2500</td>
-            <td>5487</td>
-            <td>
-              <button>
-                <a class="match-book-btn" href="#match-form">Book Ticket</a>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>5.</td>
-            <td>DC vs MI</td>
-            <td>2027-03-05 19:00 IST</td>
-            <td>Delhi</td>
-            <td>450</td>
-            <td>1000</td>
-            <td>3000</td>
-            <td>
-              <button>
-                <a class="match-book-btn" href="#match-form">Book Ticket</a>
-              </button>
-            </td>
-          </tr>
-        </table>
+        <div class="view-controls">
+          <label for="schedule-filter">Filter Team:</label>
+          <select id="schedule-filter">
+            <option value="">All Teams</option>
+            <option value="rcb">RCB</option>
+            <option value="csk">CSK</option>
+            <option value="kkr">KKR</option>
+            <option value="mi">MI</option>
+            <option value="dc">DC</option>
+          </select>
+
+          <button id="grid-btn">Grid View</button>
+          <button id="list-btn">List View</button>
+        </div>
+
+        <div id="match-cards" class="match-cards">
+          <div class="match-card" data-teams="rcb csk">
+            <h3>Match 1: RCB vs CSK</h3>
+            <p>Venue: Bengaluru</p>
+            <p>Date: 2027-03-01 19:00 IST</p>
+            <p>General: ₹1500</p>
+            <p>Premium: ₹4500</p>
+            <p>VIP: ₹7000</p>
+            <a class="match-book-btn" href="#match-form">Book Ticket</a>
+          </div>
+
+          <div class="match-card" data-teams="kkr dc">
+            <h3>Match 2: KKR vs DC</h3>
+            <p>Venue: Kolkata</p>
+            <p>Date: 2027-03-02 19:00 IST</p>
+            <p>General: ₹1200</p>
+            <p>Premium: ₹3000</p>
+            <p>VIP: ₹5700</p>
+            <a class="match-book-btn" href="#match-form">Book Ticket</a>
+          </div>
+
+          <div class="match-card" data-teams="mi rcb">
+            <h3>Match 3: MI vs RCB</h3>
+            <p>Venue: Mumbai</p>
+            <p>Date: 2027-03-03 19:00 IST</p>
+            <p>General: ₹700</p>
+            <p>Premium: ₹5000</p>
+            <p>VIP: ₹9235</p>
+            <a class="match-book-btn" href="#match-form">Book Ticket</a>
+          </div>
+
+          <div class="match-card" data-teams="csk kkr">
+            <h3>Match 4: CSK vs KKR</h3>
+            <p>Venue: Chennai</p>
+            <p>Date: 2027-03-04 19:00 IST</p>
+            <p>General: ₹1700</p>
+            <p>Premium: ₹2500</p>
+            <p>VIP: ₹5487</p>
+            <a class="match-book-btn" href="#match-form">Book Ticket</a>
+          </div>
+
+          <div class="match-card" data-teams="dc mi">
+            <h3>Match 5: DC vs MI</h3>
+            <p>Venue: Delhi</p>
+            <p>Date: 2027-03-05 19:00 IST</p>
+            <p>General: ₹450</p>
+            <p>Premium: ₹1000</p>
+            <p>VIP: ₹3000</p>
+            <a class="match-book-btn" href="#match-form">Book Ticket</a>
+          </div>
+        </div>
       </section>
 
       <section id="match-form">

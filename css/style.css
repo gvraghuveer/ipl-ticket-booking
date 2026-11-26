@@ -323,9 +323,9 @@ table button a:hover {
 }
 
 #guidelines .cards-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 15px;
-  flex-wrap: wrap;
 }
 
 #guidelines .card {
@@ -359,6 +359,7 @@ footer {
   font-weight: 500;
 }
 
+/* toast */
 .toast {
   display: none;
   position: fixed;
@@ -375,4 +376,193 @@ footer {
 
 .toast.show {
   display: block;
+}
+
+/* hamburger button */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* grid or list view */
+.view-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.view-controls select,
+.view-controls button {
+  padding: 8px 14px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.view-controls button {
+  background-color: #2a0845;
+  color: #ffffff;
+  border: none;
+}
+
+/* matchs as a card */
+.match-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.match-cards.list-view {
+  grid-template-columns: 1fr;
+}
+
+.match-card {
+  background-color: #fcf8ff;
+  padding: 20px;
+  border-radius: 8px;
+  border-top: 4px solid #64157a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.match-card h3 {
+  color: #2a0845;
+  margin-bottom: 10px;
+}
+
+.match-card a {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #ff6500;
+  color: #ffffff;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.match-cards.list-view .match-card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 25px;
+  padding: 15px 20px;
+  border-top: none;
+  border-left: 5px solid #64157a;
+}
+
+.match-cards.list-view .match-card h3 {
+  flex: 1 1 180px;
+  margin-bottom: 0;
+}
+
+.match-cards.list-view .match-card p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.match-cards.list-view .match-card a {
+  margin-top: 0;
+}
+
+.match-card:hover {
+  box-shadow: 0 4px 12px rgba(100, 21, 122, 0.25);
+}
+
+.match-card.hide {
+  display: none !important;
+}
+
+/* media query */
+
+@media (max-width: 900px) {
+  .match-cards,
+  #guidelines .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .match-cards.list-view .match-card {
+    padding: 10px 12px;
+    gap: 4px 14px;
+  }
+
+  .match-cards.list-view .match-card h3 {
+    flex: 1 1 100%;
+    font-size: 1rem;
+  }
+
+  .match-cards.list-view .match-card p {
+    font-size: 0.85rem;
+  }
+
+   .match-cards.list-view .match-card a {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  #match-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-container,
+  .summary-container {
+    flex: none;
+    min-width: 0;
+    width: 100%;
+  }
+
+  #about-ipl ul,
+  #about-ipl ol {
+    margin-left: 0;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #2a0845;
+  }
+
+  .navbar.open {
+    display: block;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .navbar a {
+    display: block;
+    padding: 14px 25px;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+    padding-top: 80px;
+  }
+
+  section{
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1.1rem;
+  }
 }

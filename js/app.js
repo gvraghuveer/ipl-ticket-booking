@@ -1,3 +1,4 @@
+// custom toast message function
 function showToast(m) {
   var toast = document.getElementById("toast");
   toast.textContent = m;
@@ -7,7 +8,7 @@ function showToast(m) {
     toast.classList.remove("show");
   }, 3000);
 }
-
+// smooth scroll for each book button pressed
 var bookLinks = document.getElementsByClassName("match-book-btn");
 
 for (var i = 0; i < bookLinks.length; i++) {
@@ -20,6 +21,25 @@ for (var i = 0; i < bookLinks.length; i++) {
     showToast("Fill in your details!");
   });
 }
+
+// booking form match filter
+var teamFilter = document.getElementById("team-filter");
+
+teamFilter.addEventListener("change", function () {
+  var team = teamFilter.value;
+
+  for (var i = 1; i < matchSelect.options.length; i++) {
+    var option = matchSelect.options[i];
+
+    if (team === "" || option.value.includes(team)) {
+      option.hidden = false;
+    } else {
+      option.hidden = true;
+    }
+  }
+});
+
+// ticket summary change event listener
 
 var matches = {
   "rcb-csk": {
@@ -121,4 +141,51 @@ bookingForm.addEventListener("submit", function (e) {
 
   showToast("Ticket booked successfully!");
   bookingForm.reset();
+});
+
+// filter match cards by team 
+var scheduleFilter = document.getElementById("schedule-filter");
+var matchCards = document.getElementsByClassName("match-card");
+
+scheduleFilter.addEventListener("change", function () {
+  var team = scheduleFilter.value;
+
+  for (var i = 0; i < matchCards.length; i++) {
+    var teams = matchCards[i].getAttribute("data-teams");
+
+    if (team === "" || teams.includes(team)) {
+      matchCards[i].classList.remove("hide");
+    } else {
+      matchCards[i].classList.add("hide");
+    }
+  }
+
+  showToast("Match list filtered");
+});
+
+// list / grid view 
+var cardsBox = document.getElementById("match-cards");
+var gridBtn = document.getElementById("grid-btn");
+var listBtn = document.getElementById("list-btn");
+
+gridBtn.addEventListener("click", function () {
+  cardsBox.classList.remove("list-view");
+  showToast("Grid view");
+});
+
+listBtn.addEventListener("click", function () {
+  cardsBox.classList.add("list-view");
+  showToast("List view");
+});
+
+// hamburger menu class toggle
+var menuBtn = document.getElementById("menu-btn");
+var navbar = document.getElementById("navbar");
+
+menuBtn.addEventListener("click", function () {
+  navbar.classList.toggle("open");
+});
+
+navbar.addEventListener("click", function () {
+  navbar.classList.remove("open");
 });
